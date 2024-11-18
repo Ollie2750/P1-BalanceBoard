@@ -33,7 +33,6 @@ public class BallMovement : MonoBehaviour
         //If the player has to y velocity it will add jumpPower to its y velocity
         if (myBody.velocity.y == 0)
         {
-            Debug.Log("Jump");
             myBody.AddForce(new Vector3(0, jumpPower, 0));
         }
         
