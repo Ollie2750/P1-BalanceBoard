@@ -7,6 +7,9 @@ public class Door : MonoBehaviour
     public Vector3 openPos;
     private Vector3 closePos;
     private bool isOpen = false;
+    public float transitionSpeed;
+    public float doorTimer;
+    [SerializeField] private TimerController timerController;
 
     void Start()
     {
@@ -15,14 +18,37 @@ public class Door : MonoBehaviour
 
     public void Activate()
     {
+        Debug.Log("buttonpress");
         if (isOpen)
         {
-            transform.position = openPos;
+            OpenDoor();
         }
-        else
+    }
+
+    private void OpenDoor()
+    {
+        StopAllCoroutines();
+        StartCoroutine(DoorTransition(openPos));
+        isOpen = true;
+
+        timerController.StartCountdown(doorTimer, CloseDoor);
+
+    }
+
+    private void CloseDoor()
+    {
+        StartCoroutine(DoorTransition(closePos));
+        isOpen = false;
+    }
+
+    public IEnumerator DoorTransition(Vector3 targetPosition)
+    {
+        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
         {
-            transform.position = closePos;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
+            yield return null;
         }
-        isOpen = !isOpen;
+
+        transform.position = targetPosition;
     }
 }

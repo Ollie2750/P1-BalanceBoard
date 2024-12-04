@@ -409,15 +409,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6042589881115031877, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6107353
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 6042589881115031877, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0.336
       objectReference: {fileID: 0}
     - target: {fileID: 6042589881115031877, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9854406
+      value: 1.996
       objectReference: {fileID: 0}
     - target: {fileID: 6042589881115031877, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -496,6 +496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openPos: {x: 0, y: -1, z: 0}
+  transitionSpeed: 1
+  doorTimer: 5
+  timerController: {fileID: 0}
 --- !u!1 &1791819528
 GameObject:
   m_ObjectHideFlags: 0
