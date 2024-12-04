@@ -45,7 +45,6 @@ public class BallMovement : MonoBehaviour
     {
         //Use rigidbody.AddForce to apply the movement vector to the gameobjects velocity
         myBody.AddForce(movement);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -55,6 +54,7 @@ public class BallMovement : MonoBehaviour
         {
             isCollidingWithGroundLayer = true;
         }
+       
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Kill"))
             { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
