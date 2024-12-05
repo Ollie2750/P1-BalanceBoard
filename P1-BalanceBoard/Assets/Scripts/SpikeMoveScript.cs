@@ -21,6 +21,7 @@ public class SpikeMoveScript : MonoBehaviour
         if (!isMoving)
         {
             isMoving = true;
+            targetPosition = pointB.position; // Reset target position to pointB
             StartCoroutine(MoveObject());
         }
     }
@@ -32,20 +33,24 @@ public class SpikeMoveScript : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
             // Check if the object has reached the target position
-            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
-                // Switch target position
-               targetPosition = pointA.position;
+                if (targetPosition == pointB.position)
+                {
+                    // Switch target position
+                    targetPosition = pointA.position;
+                    UnityEngine.Debug.Log("Reached Point B, moving to Point A");
+                }
+                else
+                {
+                    isMoving = false;
+                    UnityEngine.Debug.Log("Reached Point A");
+                }
             }
-            else
-            {
-                isMoving = false;
-                UnityEngine.Debug.Log("Reached Point A");
+                // Wait for the next frame
+                yield return null;
+            
             }
-
-            // Wait for the next frame
-            yield return null;
         }
     }
 
-}
