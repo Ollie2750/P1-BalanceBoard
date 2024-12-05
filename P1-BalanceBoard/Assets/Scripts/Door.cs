@@ -9,8 +9,7 @@ public class Door : MonoBehaviour
     private bool isOpen = false;
     public float transitionSpeed;
     public float doorTimer;
-    [SerializeField] private TimerController timerController;
-
+    
     void Start()
     {
         closePos = transform.position;
@@ -19,7 +18,7 @@ public class Door : MonoBehaviour
     public void Activate()
     {
         Debug.Log("buttonpress");
-        if (isOpen)
+        if (!isOpen)
         {
             OpenDoor();
         }
@@ -30,8 +29,7 @@ public class Door : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(DoorTransition(openPos));
         isOpen = true;
-
-        timerController.StartCountdown(doorTimer, CloseDoor);
+        StartCountdown(doorTimer, CloseDoor);
 
     }
 
@@ -50,5 +48,21 @@ public class Door : MonoBehaviour
         }
 
         transform.position = targetPosition;
+    }
+
+    public void StartCountdown(float duration, System.Action onComplete)
+    {
+        StartCoroutine(Countdown(duration, onComplete));
+    }
+
+    private IEnumerator Countdown(float duration, System.Action onComplete)
+    {
+        float timer = duration;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        onComplete?.Invoke();
     }
 }
