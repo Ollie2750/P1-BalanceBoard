@@ -5,8 +5,21 @@ using UnityEngine;
 public class Butten : MonoBehaviour
 {
     [SerializeField] private Elevator elevator;
+    [SerializeField] private Door door;
+    
     private void OnTriggerEnter()
     {
-        elevator.activate();
+        if (elevator != null)
+        {
+            elevator.activate();
+        }
+
+        if (door != null)
+        {
+            door.Activate();
+        }        
     }
+
+    
+
 }

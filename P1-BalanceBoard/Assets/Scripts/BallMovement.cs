@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class BallMovement : MonoBehaviour
 {
     private Vector2 input;
@@ -10,6 +11,8 @@ public class BallMovement : MonoBehaviour
     private Vector3 movement = new Vector3 (0f, 0f, 0f);
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
+    private bool isCollidingWithGroundLayer;
+    private bool isCollidingWithDeathLayer;
 
     private void Awake()
     {
@@ -31,7 +34,7 @@ public class BallMovement : MonoBehaviour
     private void OnJump(InputValue value)
     {
         //If the player has to y velocity it will add jumpPower to its y velocity
-        if (myBody.velocity.y == 0)
+        if (isCollidingWithGroundLayer)
         {
             myBody.AddForce(new Vector3(0, jumpPower, 0));
         }
@@ -42,6 +45,30 @@ public class BallMovement : MonoBehaviour
     {
         //Use rigidbody.AddForce to apply the movement vector to the gameobjects velocity
         myBody.AddForce(movement);
-
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collided object is on the "Ground" layer
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            isCollidingWithGroundLayer = true;
+        }
+       
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Kill"))
+            { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // Check if the exited collision object is on the "Ground" layer
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            isCollidingWithGroundLayer = false;
+        }
+    }
+
+
 }
