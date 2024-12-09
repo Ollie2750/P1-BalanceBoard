@@ -8,6 +8,9 @@ public class WinScript : MonoBehaviour
     [SerializeField] private Button menuButton;
     [SerializeField] private Button retryButton;
     [SerializeField] private Button nextButton;
+    [SerializeField] private string nextLevelName; // Public string field for the next level name
+
+    private Animator animator;
 
     void Start()
     {
@@ -18,11 +21,15 @@ public class WinScript : MonoBehaviour
         menuButton.onClick.AddListener(OnMenuButtonClicked);
         retryButton.onClick.AddListener(OnRetryButtonClicked);
         nextButton.onClick.AddListener(OnNextButtonClicked);
+
+        // Get the Animator component
+        animator = winCanvas.GetComponent<Animator>();
     }
 
     public void ShowWinCanvas()
     {
         winCanvas.gameObject.SetActive(true);
+        animator.Play("WinCanvasAnimation");
     }
 
     public void OnMenuButtonClicked()
@@ -39,7 +46,14 @@ public class WinScript : MonoBehaviour
 
     public void OnNextButtonClicked()
     {
-        // Load the next level scene
-        SceneManager.LoadScene("NextLevel");
+        // Load the next level scene based on the name provided in the Inspector
+        if (!string.IsNullOrEmpty(nextLevelName))
+        {
+            SceneManager.LoadScene(nextLevelName);
+        }
+        else
+        {
+            Debug.LogWarning("Next level name is not set.");
+        }
     }
 }
