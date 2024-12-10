@@ -401,8 +401,11 @@ GameObject:
   - component: {fileID: 279833025}
   - component: {fileID: 279833024}
   - component: {fileID: 279833023}
+<<<<<<< HEAD
   - component: {fileID: 279833027}
   - component: {fileID: 279833026}
+=======
+>>>>>>> parent of 7dc3cb3 (Fence)
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -477,12 +480,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279833022}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 7dc3cb3 (Fence)
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!114 &279833026
 MonoBehaviour:
@@ -542,6 +550,9 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 7dc3cb3 (Fence)
 --- !u!1001 &326925763
 PrefabInstance:
   m_ObjectHideFlags: 0
