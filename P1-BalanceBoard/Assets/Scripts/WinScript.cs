@@ -9,6 +9,7 @@ public class WinScript : MonoBehaviour
     [SerializeField] private Button retryButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private string nextLevelName; // Public string field for the next level name
+    [SerializeField] private BallMovement playerController; // Reference to the player control script
 
     private Animator animator;
 
@@ -31,6 +32,12 @@ public class WinScript : MonoBehaviour
         winCanvas.gameObject.SetActive(true);
         animator.Play("WinCanvasAnimation");
         Debug.Log("You Win!");
+
+        // Disable the player control script
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+        }
     }
 
     public void OnMenuButtonClicked()
