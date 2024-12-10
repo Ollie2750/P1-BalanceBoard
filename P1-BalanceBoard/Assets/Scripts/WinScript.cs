@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -38,7 +39,9 @@ public class WinScript : MonoBehaviour
         {
             playerController.enabled = false;
         }
-    }
+        // Set the first selected button
+        EventSystem.current.SetSelectedGameObject(nextButton.gameObject);
+}
 
     public void OnMenuButtonClicked()
     {
