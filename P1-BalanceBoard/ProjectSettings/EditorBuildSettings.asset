@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Biome 1.unity
     guid: aff06ac28fcd6164db87aa8f93cf0609
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+    path: Assets/Scenes/GammelTutorial.unity
     guid: 3089f3af61507634a857a5a673034375
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 0e0a1c7f355ac5d4fb14a5c0b4d75089
   m_configObjects: {}
