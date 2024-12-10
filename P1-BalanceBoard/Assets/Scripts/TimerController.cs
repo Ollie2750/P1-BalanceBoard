@@ -33,19 +33,4 @@ public class TimerController : MonoBehaviour
 
     }
 
-    public void StartCountdown(float duration, System.Action onComplete)
-    {
-        StartCoroutine(Countdown(duration, onComplete));
-    }
-
-    private IEnumerator Countdown(float duration, System.Action onComplete)
-    {
-        float timer = duration;
-        while (timer > 0)
-        {
-            timer -= Time.deltaTime;
-            yield return null;
-        }
-        onComplete?.Invoke();
-    }
 }
