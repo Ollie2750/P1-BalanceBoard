@@ -14,7 +14,7 @@ public class Elevator : MonoBehaviour
 
     void Start()
     {
-        transform.position = startingPosition;
+        //transform.position = startingPosition;
         dirrection1 = endPosition - startingPosition;
         dirrection2 = startingPosition - endPosition;
 
