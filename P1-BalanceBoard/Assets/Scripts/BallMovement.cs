@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class BallMovement : MonoBehaviour
 {
     private Vector2 input;
@@ -11,6 +12,10 @@ public class BallMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
     private bool isCollidingWithGroundLayer;
+<<<<<<< HEAD
+=======
+    private bool isCollidingWithDeathLayer;
+>>>>>>> main
 
     private void Awake()
     {
@@ -43,7 +48,6 @@ public class BallMovement : MonoBehaviour
     {
         //Use rigidbody.AddForce to apply the movement vector to the gameobjects velocity
         myBody.AddForce(movement);
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -53,6 +57,14 @@ public class BallMovement : MonoBehaviour
         {
             isCollidingWithGroundLayer = true;
         }
+<<<<<<< HEAD
+=======
+       
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Kill"))
+            { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+        }
+>>>>>>> main
     }
 
     private void OnCollisionExit(Collision collision)
@@ -64,4 +76,8 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 }

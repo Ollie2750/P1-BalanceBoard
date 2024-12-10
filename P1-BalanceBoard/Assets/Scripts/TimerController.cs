@@ -33,6 +33,7 @@ public class TimerController : MonoBehaviour
 
     }
 
+<<<<<<< HEAD
     public void StartCountdown(float duration, System.Action onComplete)
     {
         StartCoroutine(Countdown(duration, onComplete));
@@ -48,4 +49,6 @@ public class TimerController : MonoBehaviour
         }
         onComplete?.Invoke();
     }
+=======
+>>>>>>> main
 }
