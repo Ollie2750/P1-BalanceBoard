@@ -30,6 +30,7 @@ public class WinScript : MonoBehaviour
     {
         winCanvas.gameObject.SetActive(true);
         animator.Play("WinCanvasAnimation");
+        Debug.Log("You Win!");
     }
 
     public void OnMenuButtonClicked()
