@@ -15,6 +15,7 @@ public class SpikeAlwaysMove : MonoBehaviour
     {
         targetPosition = pointB.position;
     }
+
     private void FixedUpdate()
     {
         StartMoving();
@@ -34,7 +35,8 @@ public class SpikeAlwaysMove : MonoBehaviour
     {
         while (isMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            float step = speed * Time.fixedDeltaTime; // Use fixedDeltaTime for consistent movement
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
             // Check if the object has reached the target position
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
@@ -51,10 +53,9 @@ public class SpikeAlwaysMove : MonoBehaviour
                     UnityEngine.Debug.Log("Reached Point A");
                 }
             }
-                // Wait for the next frame
-                yield return null;
-            
-            }
+
+            // Wait for the next fixed update
+            yield return new WaitForFixedUpdate();
         }
     }
-
+}
