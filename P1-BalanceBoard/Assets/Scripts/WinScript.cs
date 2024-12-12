@@ -31,7 +31,7 @@ public class WinScript : MonoBehaviour
     public void ShowWinCanvas()
     {
         winCanvas.gameObject.SetActive(true);
-        animator.Play("WinCanvasAnimation");
+        animator.Play("Win Screen Test Animation");
         Debug.Log("You Win!");
 
         // Disable the player control script
