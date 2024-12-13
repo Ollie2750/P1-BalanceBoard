@@ -4209,7 +4209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1532428583}
   pointB: {fileID: 1471129750}
-  speed: 1
+  speed: 0.6
 --- !u!1001 &836616679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5166,7 +5166,7 @@ Transform:
   m_GameObject: {fileID: 966180119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7943,6 +7943,18 @@ PrefabInstance:
       propertyPath: resetThreshold
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 5947697081951500895, guid: 789c0693edf26f54fa16a2e9501aaab3, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5953068502518200665, guid: 789c0693edf26f54fa16a2e9501aaab3, type: 3}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5953068502518200665, guid: 789c0693edf26f54fa16a2e9501aaab3, type: 3}
+      propertyPath: jumpPower
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6251202883817307867, guid: 789c0693edf26f54fa16a2e9501aaab3, type: 3}
       propertyPath: m_Name
       value: New Player
@@ -9335,7 +9347,7 @@ Transform:
   m_GameObject: {fileID: 1896832939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_LocalPosition: {x: 0, y: 0, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

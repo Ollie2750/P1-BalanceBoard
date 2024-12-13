@@ -11,6 +11,7 @@ public class BallMovement : MonoBehaviour
     private Vector3 movement = new Vector3 (0f, 0f, 0f);
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
+    [SerializeField] private float maxSpeed;
     private bool isCollidingWithGroundLayer;
     private bool isCollidingWithDeathLayer;
 
@@ -43,8 +44,13 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Use rigidbody.AddForce to apply the movement vector to the gameobjects velocity
-        myBody.AddForce(movement);
+        // Apply movement force only if the current speed is below the maximum speed
+        if (myBody.velocity.magnitude < maxSpeed)
+        {
+            //Use rigidbody.AddForce to apply the movement vector to the gameobjects velocity
+            myBody.AddForce(movement);
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
