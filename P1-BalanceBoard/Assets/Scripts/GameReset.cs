@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
  
-        public float resetThreshold = -20f;
+    public float resetThreshold = -20f;
     
 
     // Update is called once per frame
@@ -14,7 +14,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (transform.position.y < resetThreshold)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartPlatform startPlatform = FindObjectOfType<StartPlatform>();
+            startPlatform.SpawnPlayer();
         }
 
     }
