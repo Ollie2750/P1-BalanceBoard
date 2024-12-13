@@ -6,7 +6,7 @@ using UnityEngine;
 public class LayerCollisionKill : MonoBehaviour
 {
     // Set the "Killer" layer number
-    public int KillLayer;
+    private int KillLayer;
 
     private void Start()
     {
