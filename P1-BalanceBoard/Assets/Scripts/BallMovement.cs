@@ -34,7 +34,7 @@ public class BallMovement : MonoBehaviour
     //Rigth stick pressed to jump
     private void OnJump(InputValue value)
     {
-        //If the player has to y velocity it will add jumpPower to its y velocity
+
         if (isCollidingWithGroundLayer)
         {
             myBody.AddForce(new Vector3(0, jumpPower, 0));
