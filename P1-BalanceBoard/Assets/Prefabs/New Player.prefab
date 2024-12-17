@@ -8,21 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4192127425336740543, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e4e344c0eb86e2a4e943609b415db00a, type: 2}
     - target: {fileID: 4333445649514308415, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: New Player
       objectReference: {fileID: 0}
     - target: {fileID: 4333445649514308415, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_TagString
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5668664494498188001, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
-      propertyPath: m_Radius
-      value: 0.5070813
       objectReference: {fileID: 0}
     - target: {fileID: 5668664494498188001, guid: a8d01ddfdf7f1c649a65cb5fe174b7f0, type: 3}
       propertyPath: m_Center.z
@@ -109,4 +101,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d7ab69472cb094e94e917d49594959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KillLayer: 7
