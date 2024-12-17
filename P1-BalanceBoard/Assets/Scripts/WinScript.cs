@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class WinScript : MonoBehaviour
     [SerializeField] private Button retryButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private string nextLevelName; // Public string field for the next level name
+    [SerializeField] private BallMovement playerController; // Reference to the player control script
 
     private Animator animator;
 
@@ -29,8 +31,17 @@ public class WinScript : MonoBehaviour
     public void ShowWinCanvas()
     {
         winCanvas.gameObject.SetActive(true);
-        animator.Play("WinCanvasAnimation");
-    }
+        animator.Play("Win Screen Test Animation");
+        Debug.Log("You Win!");
+
+        // Disable the player control script
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+        }
+        // Set the first selected button
+        EventSystem.current.SetSelectedGameObject(nextButton.gameObject);
+}
 
     public void OnMenuButtonClicked()
     {

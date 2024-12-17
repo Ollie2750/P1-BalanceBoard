@@ -24,4 +24,9 @@ public void LoadLevels()
     {
         SceneManager.LoadScene("Biome 3");
     }
+    public void LoadLavaLevel()
+    {
+        SceneManager.LoadScene("Lava Level");
+    }
+
     }

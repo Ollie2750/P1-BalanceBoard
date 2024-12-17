@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 0e0a1c7f355ac5d4fb14a5c0b4d75089
+  - enabled: 1
+    path: Assets/Scenes/Level/Lava Level.unity
+    guid: 181f99d159e445946950a5151762532b
   m_configObjects: {}
