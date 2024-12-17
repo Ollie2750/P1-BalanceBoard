@@ -26,7 +26,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Sandra",
+    "git-widget-placeholder": "main-Backup",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -88,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734433447358</updated>
       <workItem from="1734433450904" duration="64000" />
-      <workItem from="1734433533009" duration="742000" />
+      <workItem from="1734433533009" duration="990000" />
     </task>
     <servers />
   </component>
