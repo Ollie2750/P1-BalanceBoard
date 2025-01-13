@@ -19,7 +19,4 @@ public class Butten : MonoBehaviour
             door.Activate();
         }        
     }
-
-    
-
 }

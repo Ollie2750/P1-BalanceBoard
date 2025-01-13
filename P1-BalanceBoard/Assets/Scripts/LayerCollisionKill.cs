@@ -6,9 +6,9 @@ using UnityEngine;
 public class LayerCollisionKill : MonoBehaviour
 {
     // Set the "Killer" layer number
-    public int KillLayer;
+    private int KillLayer;
 
-    private void start()
+    private void Start()
     {
         // Get the "Killer" layer number based on the layer's name
         KillLayer = LayerMask.NameToLayer("Kill");
