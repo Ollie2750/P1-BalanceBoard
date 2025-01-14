@@ -33,7 +33,7 @@ public class BallMovement : MonoBehaviour
 
     //Rigth stick pressed to jump
     private void OnJump(InputValue value)
-    {
+    {   
 
         if (isCollidingWithGroundLayer)
         {
